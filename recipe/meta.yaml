@@ -1,5 +1,5 @@
 {% set name = "moscot" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/moscot-{{ version }}.tar.gz
-  sha256: 31ac785bc0deb5ad579870f7ba4504e7e8ff1d60defc2b5d76ea238650e6653b
+  sha256: 0158a2f7c1754ef977359f22f8406c2a2f45474d2a3171ed85394253fb3a80a3
 
 build:
   number: 0
@@ -23,15 +23,15 @@ requirements:
     - python >=3.8
     - numpy >=1.20.0
     - scipy >=1.7.0
-    - pandas <2.0
+    - pandas >=2.0.1
     - networkx >=2.6.3
     - matplotlib-base >=3.5.0
-    - anndata >=0.8.0
+    - anndata >=0.9.1
     - scanpy >=1.9.3
     - wrapt >=1.13.2
-    - docrep >=0.3.2
-    - ott-jax >=0.4.0
+    - ott-jax >=0.4.4
     - cloudpickle >=2.2.0
+    - rich >=13.5
 
 test:
   imports:
