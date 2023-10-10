@@ -36,10 +36,13 @@ requirements:
 test:
   imports:
     - moscot
-  requires:
-    - pip
-  commands:
-    - pip check
+  # TODO(michalk8): re-enable once https://github.com/pypa/pip/issues/11157 is merged
+  # or the false positives are resolved in moscot/ott-jax/umap-learn
+
+  # requires:
+  #   - pip
+  # commands:
+  #   - pip check
 
 about:
   home: https://github.com/theislab/moscot
