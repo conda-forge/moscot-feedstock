@@ -1,13 +1,13 @@
 {% set name = "moscot" %}
-{% set version = "0.3.4" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/moscot-{{ version }}.tar.gz
-  sha256: 438b9ee5a619b21e554573bd61d30d2db331a493cab875289fceb09952a711e7
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/moscot-{{ version }}.tar.gz
+  sha256: f39de871356877b26875df318051b3efcdbc41a3a2df54a0479b4a0b29fc8473
 
 build:
   number: 0
