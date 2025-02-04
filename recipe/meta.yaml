@@ -1,13 +1,14 @@
 {% set name = "moscot" %}
-{% set version = "0.3.4" %}
+{% set version = "0.4.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/moscot-{{ version }}.tar.gz
-  sha256: 438b9ee5a619b21e554573bd61d30d2db331a493cab875289fceb09952a711e7
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/moscot-{{ version }}.tar.gz
+  sha256: f39de871356877b26875df318051b3efcdbc41a3a2df54a0479b4a0b29fc8473
 
 build:
   number: 0
@@ -16,11 +17,12 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
+    - setuptools
     - setuptools_scm
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - numpy >=1.20.0
     - scipy >=1.7.0
     - pandas >=2.0.1
@@ -29,20 +31,20 @@ requirements:
     - anndata >=0.9.1
     - scanpy >=1.9.3
     - wrapt >=1.13.2
-    - ott-jax >=0.4.4
+    - ott-jax >=0.5.0
     - cloudpickle >=2.2.0
     - rich >=13.5
+    - docstring-inheritance >=2.0.0
+    - mudata >=0.2.2
+    - flax >=0.10.2
+    - optax >=0.2.4
+    - diffrax >=0.6.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - moscot
-  # TODO(michalk8): re-enable once https://github.com/pypa/pip/issues/11157 is merged
-  # or the false positives are resolved in moscot/ott-jax/umap-learn
-
-  # requires:
-  #   - pip
-  # commands:
-  #   - pip check
 
 about:
   home: https://github.com/theislab/moscot
@@ -59,3 +61,4 @@ extra:
     - michalk8
     - MUCDK
     - giovp
+    - selmanozleyen
