@@ -153,4 +153,5 @@ Feedstock Maintainers
 * [@MUCDK](https://github.com/MUCDK/)
 * [@giovp](https://github.com/giovp/)
 * [@michalk8](https://github.com/michalk8/)
+* [@selmanozleyen](https://github.com/selmanozleyen/)
 
