@@ -1,12 +1,13 @@
 {% set name = "moscot" %}
 {% set version = "0.4.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/moscot-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/moscot-{{ version }}.tar.gz
   sha256: f39de871356877b26875df318051b3efcdbc41a3a2df54a0479b4a0b29fc8473
 
 build:
@@ -16,11 +17,12 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - pip
+    - setuptools
     - setuptools_scm
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - numpy >=1.20.0
     - scipy >=1.7.0
     - pandas >=2.0.1
@@ -39,15 +41,10 @@ requirements:
     - diffrax >=0.6.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - moscot
-  # TODO(michalk8): re-enable once https://github.com/pypa/pip/issues/11157 is merged
-  # or the false positives are resolved in moscot/ott-jax/umap-learn
-
-  # requires:
-  #   - pip
-  # commands:
-  #   - pip check
 
 about:
   home: https://github.com/theislab/moscot
