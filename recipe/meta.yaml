@@ -1,5 +1,5 @@
 {% set name = "moscot" %}
-{% set version = "0.4.2" %}
+{% set version = "0.5.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/moscot-{{ version }}.tar.gz
-  sha256: ae2441430a39c7d0e4acf6e491d3dc0403be37ae3d96f9261cba6cc049d03081
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/moscot-{{ version }}.tar.gz
+  sha256: f86674d4bbfd9b9fae77428bd6ecdcfa3f0b6aabbeae3b41cd2662e83cf23b34
 
 build:
   number: 0
