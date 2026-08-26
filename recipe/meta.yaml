@@ -1,6 +1,6 @@
 {% set name = "moscot" %}
 {% set version = "0.5.2" %}
-{% set python_min = "3.10" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -26,14 +26,16 @@ requirements:
     - numpy >=1.20.0
     - scipy >=1.7.0
     - pandas >=2.0.1
-    - networkx >=2.6.3
+    - networkx >=3.2
     - matplotlib-base >=3.5.0
     - anndata >=0.9.1
     - scanpy >=1.9.3
     - wrapt >=1.13.2
-    - ott-jax >=0.5.0
+    - jax >=0.6.1
+    - ott-jax >=0.6.0
     - cloudpickle >=2.2.0
     - rich >=13.5
+    - docrep >=0.3.2
     - docstring-inheritance >=2.0.0
     - mudata >=0.2.2
     - flax >=0.10.2
